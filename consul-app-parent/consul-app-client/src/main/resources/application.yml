@@ -1,0 +1,12 @@
+server:
+  port: 8520
+
+spring:
+  application:
+    name: consul-app-client
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}

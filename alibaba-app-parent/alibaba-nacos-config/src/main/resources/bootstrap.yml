@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: nacos-config-sample
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        # spring.application.name+.file-extension 组成nacos对应的dataID 默认为properties
+        file-extension: yaml
+        username: stewart01
+        password: stewart1234
+        # namespace对应的id，不配置的情况下默认指向public
+        namespace: nacos-config-sample-id
+        # 默认 DEFAULT_GROUP
+        group: DEFAULT_GROUP

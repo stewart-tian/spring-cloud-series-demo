@@ -1,0 +1,36 @@
+HELP.md
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+/*/target/
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+# Project exclude paths
+/alibaba-app-parent/alibaba-nacos-config/target/
+/consul-app-parent/consul-app-client/target/
+/consul-app-parent/consul-app-server/target/
+/eureka-app-parent/eureka-app-center/target/
+/eureka-app-parent/eureka-app-client/target/
+/eureka-app-parent/eureka-app-server/target/

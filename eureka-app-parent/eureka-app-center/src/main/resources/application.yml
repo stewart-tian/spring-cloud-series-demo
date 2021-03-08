@@ -1,0 +1,76 @@
+server:
+  port: 8765
+  servlet:
+    context-path: /eureka
+
+spring:
+  application:
+    name: eureka-app-center
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+eureka:
+  instance:
+    hostname: eureka.center.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka.center.com:8765/eureka/
+
+
+---
+spring:
+  profiles: one
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: eureka8761.com
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka8761.com:8761/eureka,http://eureka8762.com:8762/eureka,http://eureka8763.com:8763/eureka
+
+
+
+---
+spring:
+  profiles: two
+
+server:
+  port: 8762
+
+eureka:
+  instance:
+    hostname: eureka8762.com
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka8761.com:8761/eureka,http://eureka8762.com:8762/eureka,http://eureka8763.com:8763/eureka
+
+---
+spring:
+  profiles: three
+
+server:
+  port: 8763
+
+eureka:
+  instance:
+    hostname: eureka8763.com
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka8761.com:8761/eureka,http://eureka8762.com:8762/eureka,http://eureka8763.com:8763/eureka
+
+
+
+
